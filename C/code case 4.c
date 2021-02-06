@@ -10,7 +10,7 @@ int main()
     float (*pfunArry[2])(float, float) = {&add, &minu};
     double k = pfunArry[0](3.33, 2.22);
     printf("%f \n", k);
-    k = pfunArry[0](3.33, 2.22);
+    k = pfunArry[1](3.33, 2.22);
     printf("%f \n", k);
 
     return 0;

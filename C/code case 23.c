@@ -8,6 +8,7 @@ int main()
     {
         printf("%c", *message++);
     }
+    printf(" %c", *message);
     printf("\n");
     
     int copy = 1;

@@ -98,6 +98,7 @@ void displayTable(table t)
         printf("%d", t.head[i]);
     }
     printf("\n");
+    printf("%d \n", t.length);
 }
 
 int main()
@@ -106,7 +107,7 @@ int main()
     for (int i=1; i<=Size; i++)
     {
         t1.head[i-1] = i;
-        t1.length++;
+        t1.length++;//在这里给length赋值
     }
     printf("原顺序表: \n");
     displayTable(t1);
@@ -126,6 +127,6 @@ int main()
     printf("将元素3改为元素6: \n");
     t1=amendTable(t1, 3, 6);
     displayTable(t1);
-    
+
     return 0;    
 }

@@ -135,3 +135,4 @@ void display(link *p)
 
     printf("\n");
 }
+//问题很多,但是可以编译通过

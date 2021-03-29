@@ -2,7 +2,7 @@
 int main()
 {
     FILE *fp = NULL;
-    fp = fopen("/home/turing/test.txt", "r+");
+    fp = fopen("/home/turing/test.txt", "a+");
     
     fprintf(fp, "This is testing for fprintf... \n");
     //te后面的一个字符会变成A

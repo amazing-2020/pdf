@@ -15,6 +15,6 @@ int main(int argc, const char * argv[])
     printf("\n");
     *p = 100;
     printf("p = %d \n", *p);
+    //*错误范例
     return 0;
-
 }

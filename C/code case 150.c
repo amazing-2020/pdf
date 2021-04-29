@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <getopt.h>
 #include <stdlib.h>
-
-extern int optind;
-extern char* optarg;
+/*
+ *Possible incoming parameters:
+ *-b d -a a
+*/
 int main(int argc, char *argv[])
 {
     printf("argc = %d \n", argc);
     for (int  i = 0; i< argc; i++) {
         printf("argc[%d] = %s \n", i, argv[i]);
     }
+
     int opt, flags;
     char *avalue, *bvalue;
 
@@ -30,6 +33,7 @@ int main(int argc, char *argv[])
             flags = 3;
             break;
         default:
+            flags = 5;
             break;
         }
     }

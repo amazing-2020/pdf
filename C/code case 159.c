@@ -16,6 +16,7 @@ void merge_sort(int arr[], int len)
             int k = low;
             int start1 = low, end1 = mid;
             int start2 = mid, end2 = high;
+            
             while (start1 < end1 && start2 < end2) {
                 b[k++] = a[start1] < a[start2] ? a[start1++] : a[start2++];
             }

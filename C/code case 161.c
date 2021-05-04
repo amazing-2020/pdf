@@ -32,7 +32,7 @@ void merge_sort(int arr[], const int len)
     int reg[len];
     merge_sort_recursive(arr, reg, 0, len-1);
 }
-
+//归并排序 递归法
 int main(void)
 {
     int array[] = {121, 22, 2, 5, 45, 405, 9351, 54, 987, 4, 564, 54, 6};

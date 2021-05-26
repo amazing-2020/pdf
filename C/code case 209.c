@@ -18,11 +18,11 @@ int main(void) {
     scanf("%lld", &n);
     while (n)
     {
-        i = n%10;
+        i = n%10;//取余数
         if (i) {
             count += ppow(2, k);
         }
-        k++;
+        k++;//2的k次方
         n /= 10;
     }
     printf("Convert to decimal: %d \n", count);

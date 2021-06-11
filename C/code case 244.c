@@ -3,7 +3,7 @@
 
 int main(void) {
     int i, j;
-    char str[10][10], temp[50];
+    char str[10][50], temp[50];
 
     printf("Enter 10 words: \n");
     for (i=0; i<10; ++i) {

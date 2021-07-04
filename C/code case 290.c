@@ -8,7 +8,7 @@ int main() {
         for (j=2; j<=k; j++) {
             if (i%j==0) break;
         }
-        if (j>k) {
+        if (j>k) {//没有发生break，即没有可以整除i的j
             printf("%d \n", i);
             printf("&%d %d\n", j, k);
         }

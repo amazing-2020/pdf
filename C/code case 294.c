@@ -16,7 +16,6 @@ void Positive_integer_disintegrant(int n) {
             i++;
         }
     }
-    
 }
 
 int main() {

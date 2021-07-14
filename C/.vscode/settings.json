@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "stdlib.h": "c",
         "stdio.h": "c",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "string.h": "c"
     }
 }

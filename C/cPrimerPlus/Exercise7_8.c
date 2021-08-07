@@ -47,7 +47,7 @@ int main(void)
             taxes = (salary - level1) * RATE2 + level1 * RATE1;
         else
             taxes = (salary - level2) * RATE3 + (level2 - level1) * RATE2 + level1 * RATE1;
-            netIncome = salary - taxes;
+        netIncome = salary - taxes;
 
         printf("Your salary is $%0.3lf, the taxes is $%0.3lf, the net income is $%0.3lf \n\n", salary, taxes, netIncome);
     }

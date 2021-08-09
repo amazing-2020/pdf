@@ -27,8 +27,10 @@ int main(void)
                       scanf("%lf", &c_weight);
                       break;
             default: break;
-        }
+        }        
         printf("** Please choose thefactor: oinion: a, beet: b, carrot: c, quit: q **:\n");
+        while (getchar() != '\n')
+            continue;
     }
     grossWeight = o_weight + b_weight + c_weight;
     if (grossWeight <= WEIGHT1)

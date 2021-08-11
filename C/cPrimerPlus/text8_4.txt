@@ -1,0 +1,15 @@
+At the core, the problem is that almost no consumer-oriented platforms or software products are being created in Europe, or more precisely, by European companies.
+
+Almost all software and (communication) services these days are provided (nearly) for free. The software comes with your computer, the service comes with the phone, or perhaps it is an app that costs a few euros at most.
+
+There are of course exceptions, gaming is one, but in general software and services aimed at consumers are made available without explicit payment. This includes browsers and almost all our modes of communication (email, chat, video) or collaboration (file exchange, calendaring, document editing).
+
+So why would anyone develop such free platforms? Programmers and hardware are still pretty expensive. There must be a plan.
+
+In many countries there is a deeply held belief that it will always be possible to eventually exploit users in order to make money, even if you currently aren’t yet sure how you’ll do that.
+
+Possibilities include monetizing users' behaviour, or more nefariously, once a platform is dominant, abuse its position to make other people pay up if they want to do business with your users (or simply reach them). This is called rent-seeking.
+
+As an example, Apple and Google have recently booted a large gaming company from their platform to make sure they get their 30% cut. To access Android and Apple users, you’ll have to get out your wallet.
+
+Over the past two decades, giving away free software (or running it for users as a platform) has proven to be profitable in the long run, mostly by extracting money indirectly, often through unkind or exclusionary means.

@@ -47,6 +47,7 @@ L *creat_node(int data)
 void print_list(L *pH)
 {
     L *p = pH;
+    
     printf("******************* \n");
     printf("The linked list you created: \n");
     while (p->next != NULL)
@@ -59,6 +60,7 @@ void print_list(L *pH)
 void tail_insert(L *pH, L *new)
 {
     L *p = pH;
+
     while (p->next != NULL)
     {
         p = p -> next;

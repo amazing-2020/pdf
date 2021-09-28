@@ -1,0 +1,1 @@
+import sys; x = 'baidu'; sys.stdout.write(x + '\n')

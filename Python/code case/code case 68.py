@@ -1,0 +1,18 @@
+print('%o' % 20)
+print('%d' % 20)
+print('%x' % 20)
+
+print('%f' % 1.11)
+print('%.1f' % 1.11)
+print('%e' % 1.11)
+print('%.3e' % 1.11)
+print('%g' % 1.11)
+print('%.7g' % 1.11)
+print('%.2g' % 1.11)
+
+print("%s" % 'hello world')
+print("%20s" % 'hello world')
+print("%-20s" % 'hello world')
+print("%.2s" % 'hello world')
+print("%10.2s" % 'hello world')
+print("%-10.2s" % 'hello world')

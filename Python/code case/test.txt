@@ -1,0 +1,7 @@
+# python3.9 code case 76.py >> test.py
+
+result is 2.0
+executing finally clause
+divided bt zero
+executing finally clause
+executing finally clause

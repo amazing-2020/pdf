@@ -13,7 +13,7 @@ class Cat:
         print("%s is drinking Cola..." % self.name)
 
     def introduce(self):
-        print("name: %s, age: %d" % (self.name, self.age))
+        print("name: %s, age: %d.." % (self.name, self.age))
 
 
 tom = Cat("Tom", 30)

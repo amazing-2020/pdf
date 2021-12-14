@@ -1,0 +1,8 @@
+echo "Example of passing parameters: ./xxx.sh 1 2 45"
+echo "The first parameter: $1"
+echo "The number of the paramaters: $#"
+echo "Show the parameter as a string: $*"
+echo "Show the parameter as a string: $@"
+echo "Show command status: $?"
+echo "Show command PID: $$"
+echo "Show last backgroud command PID: $!"

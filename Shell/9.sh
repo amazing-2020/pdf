@@ -1,0 +1,5 @@
+echo "Example of passing parameters: ./xxx.sh 1 2 45"
+echo "File name to be executed: $0"
+echo "The first parameter: $1"
+echo "The first parameter: $2"
+echo "The first parameter: $3"

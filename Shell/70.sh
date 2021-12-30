@@ -1,0 +1,11 @@
+echo [[:upper:]]*
+echo [![:digit:]]*
+echo [[:alpha:]]*
+echo [[:lower:]]*
+echo "--------------*-----------"
+echo [[:xdigit:]]*
+echo [[:alnum:]]*
+echo [[:print:]]*
+echo "--------------*-----------"
+echo [[:blank:]]*
+echo [[:space:]]*

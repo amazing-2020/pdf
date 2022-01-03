@@ -17,4 +17,5 @@ while getopts 'lha': OPTION; do
         esac
     done
     shift "$(($OPTIND - 1))"
+    # https://wangdoc.com/bash/script.html#getopts-%E5%91%BD%E4%BB%A4
     

@@ -1,4 +1,5 @@
 import sys
+
 while True:
     try:
         x = int(input("Please input a number: "))
@@ -18,4 +19,3 @@ except ValueError:
 except:
     print('Unexpected errors: ', sys.exc_info()[0])
     raise
-

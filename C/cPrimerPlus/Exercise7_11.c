@@ -12,23 +12,23 @@ int main(void)
     double o_weight, b_weight, c_weight, grossWeight;
     double discount = 0, vegetablePrice, packagingFee, totalPrice;
 
-    printf("** Please choose thefactor: oinion: a, beet: b, carrot: c, quit: q **:\n");    
+    printf("** Please choose the factor: onion: a, beet: b, carrot: c, quit: q **:\n");
     while ((vegetable = getchar()) != 'q')
     {   
         switch (vegetable)
         {
-            case 'a': printf("Please enter the weight of oinion: ");
+            case 'a': printf("Please enter the weight of onion: ");
                       scanf("%lf", &o_weight);
                       break;
             case 'b': printf("Please enter the weight of beet: ");
                       scanf("%lf", &b_weight);
                       break;
-            case 'c': printf("Please enter the weight of carrort: ");
+            case 'c': printf("Please enter the weight of carrot: ");
                       scanf("%lf", &c_weight);
                       break;
             default: break;
         }        
-        printf("** Please choose thefactor: oinion: a, beet: b, carrot: c, quit: q **:\n");
+        printf("** Please choose the factor: onion: a, beet: b, carrot: c, quit: q **:\n");
         while (getchar() != '\n')
             continue;
     }
@@ -48,7 +48,7 @@ int main(void)
         discount = 0.05 * vegetablePrice;
     }
     
-    printf("The price of oinion: $%f/pound, beet: $%f/pound, carrot: $%f/pound \n", onionPrice, beetPrice, carrotPrice);
+    printf("The price of onion: $%f/pound, beet: $%f/pound, carrot: $%f/pound \n", onionPrice, beetPrice, carrotPrice);
     printf("The gross weight: %0.2lf, totalPrice: %0.4lf, packagingFee: %0.2lf, the end price: %0.4lf \n", grossWeight, totalPrice, packagingFee, totalPrice  - discount);
     if (discount)
         printf("The discount: %0.4lf \n", discount);

@@ -24,7 +24,7 @@ void twoPeopleInvest()
         dapneAssets += baseCapital * 0.1;
         deirdreAssets = deirdreAssets * (1 + 0.05);
     } while (dapneAssets > deirdreAssets);
-    printf("%d years past, Deirdr will have more money. \n", i);
+    printf("%d years past, Deirdre will have more money. \n", i);
     printf("At this year Daphne has %5.4lf$, Deirdre has %5.4lf$ \n", dapneAssets, deirdreAssets);
 }
 
@@ -37,7 +37,7 @@ void withdrawMoney()
     {
         money = money * (1+0.08) - 1E5;
     }
-    printf("%d years passed, Chuckie Lucky whithdraw his money. \n", i);
+    printf("%d years passed, Chuckie Lucky withdraw his money. \n", i);
 }
 
 void makeFriends()

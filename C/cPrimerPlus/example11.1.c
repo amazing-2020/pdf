@@ -32,7 +32,7 @@ void strings1(void)
 
 void strptr(void)
 {
-    printf("%s, %p, %c \n", "We", "are", *"space facers");
+    printf("%s, %p, %c \n", "We", "are", *"space farers");
 }
 
 void addresses(void)

@@ -29,7 +29,7 @@ int main(void)
         {
             yourHeight();
         } else {
-            printf("Unkonwn input,please enter again \n");
+            printf("Unknown input,please enter again \n");
             getchar(); //当输入两个子母或符号时，将会打印第32行printf语句的的内容
         }       
     }

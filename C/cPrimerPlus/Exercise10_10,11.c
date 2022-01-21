@@ -5,7 +5,7 @@ void showArray(int  array[][5], int cols);
 int main(void)
 {
     int array[4] = {445,78,78, 5};
-    int arrat1[4] = {5345, 45, 45, 4};
+    int array1[4] = {5345, 45, 45, 4};
     int array2[4] = {0};
     int array3[3][5] = {
         {16, 2, 77, 40, 12071},
@@ -13,7 +13,7 @@ int main(void)
         {478, 787, 8, 78, 78}
     };
     
-    copy( array, arrat1, array2, 4);
+    copy( array, array1, array2, 4);
     for (int i = 0; i < 4; i++)
         printf("%d ", array2[i]);
     printf("\n");

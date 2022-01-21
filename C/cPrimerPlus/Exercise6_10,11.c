@@ -28,18 +28,18 @@ void printReveredNumbers()
 
 void sumOfSquare()
 {
-    long low, heigh;
+    long low, high;
     long sum = 0;
 
     printf("Please enter lower and upper integer limits: ");
     scanf("%ld %ld", &low, &heigh);
-    while (low < heigh)
+    while (low < high)
     {
         for (long i = low; i <= heigh; i++)
         {
             sum += i*i;
         }
-        printf("The sums of the squares from %ld to %ld is %ld \n", low*low, heigh*heigh, sum);
+        printf("The sums of the squares from %ld to %ld is %ld \n", low*low, high*high, sum);
         printf("Enter next set of limits: ");
         scanf("%ld %ld", &low, &heigh);
     }

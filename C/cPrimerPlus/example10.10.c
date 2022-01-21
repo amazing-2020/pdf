@@ -18,21 +18,21 @@ int main(void)
 
 void sum_arr1(void)
 {
-    int marbies[SIZE] = { 20, 10, 5, 39, 4, 16, 19, 26, 31, 20};
+    int marbles[SIZE] = { 20, 10, 5, 39, 4, 16, 19, 26, 31, 20};
     long answers;
 
-    answers = sum(marbies, SIZE);
-    printf("The total number of marbies is %ld. \n", answers);
-    printf("The size of marbines is %zd bytes. \n", sizeof marbies);
+    answers = sum(marbles, SIZE);
+    printf("The total number of marbles is %ld. \n", answers);
+    printf("The size of marbles is %zd bytes. \n", sizeof marbles);
 }
 
 void sum_arr2(void)
 {
-    int marbies[SIZE] = { 20, 10, 5, 39, 4, 16, 19, 26, 31, 20};
+    int marbles[SIZE] = { 20, 10, 5, 39, 4, 16, 19, 26, 31, 20};
     long answers;
 
-    answers = sump(marbies, marbies + SIZE);
-    printf("The total number of marbies is %ld. \n", answers);
+    answers = sump(marbles, marbles + SIZE);
+    printf("The total number of marbles is %ld. \n", answers);
 }
 
 int sum(int ar[], int n)

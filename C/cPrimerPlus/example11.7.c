@@ -25,7 +25,7 @@ void fgets1()
     printf("Your string twice (puts(), then fputs()): \n");
     puts(words);
     fputs(words, stdout);
-    puts("Ener another string, please.");
+    puts("Enter another string, please.");
     fgets(words, STLEN1, stdin);
     printf("Your string twice (puts(), then fputs()): \n");
     puts(words);

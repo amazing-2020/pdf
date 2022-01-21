@@ -6,7 +6,7 @@ int main(void)
     int cold_days = 0;
     int all_days = 0;
 
-    printf("Enter the list of dailt low temperature. \n");
+    printf("Enter the list of daily low temperature. \n");
     printf("Use Celsius, and enter q to quit. \n");
     while (scanf("%f", &temperature) == 1)
     {

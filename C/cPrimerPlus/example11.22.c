@@ -46,7 +46,7 @@ void quit_chk(void)
     printf("Enter up to %d lines (type quit to quit): \n", LIM);
     while (ct < LIM && s_gets(input[ct], SIZE) != 0 && strcmp(input[ct], STOP) != 0)
         ct++;
-    printf("%d string sentered! \n", ct);
+    printf("%d string entered! \n", ct);
 }
 
 void starsch(void)

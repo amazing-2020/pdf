@@ -12,7 +12,7 @@ int main(void)
     scanf("%lf", &response);
     while ( fabs(response - ANSWER) > 0.0001)
     {
-        printf("Try anain! \n");
+        printf("Try again! \n");
         scanf("%lf", &response);
     }
     printf("Close enough! \n");

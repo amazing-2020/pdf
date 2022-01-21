@@ -3,7 +3,7 @@
 
 long get_long(void);
 bool bad_limits(long begin, long end, long low, long high);
-double sum_squres(long a, long b);
+double sum_squares(long a, long b);
 int main(void)
 {
     const long MIN = -10000000L;
@@ -12,7 +12,7 @@ int main(void)
     long stop;
     double answer;
 
-    printf("This program computes the sum of the squres of integers in a range. \n"
+    printf("This program computes the sum of the squares of integers in a range. \n"
     "The lower bound should not be less than -10000000 and upper bound should not be more than +10000000. \n"
     "Enter the limits (enter 0 for both limits to quit): \n");
     printf("lower limit: ");
@@ -25,8 +25,8 @@ int main(void)
             printf("Please try an=gain. \n");
         else
         {
-            answer = sum_squres(start, stop);
-            printf("The sum of the squres of the integers from %ld to %ld is %g. \n", start, stop, answer);
+            answer = sum_squares(start, stop);
+            printf("The sum of the squares of the integers from %ld to %ld is %g. \n", start, stop, answer);
         }
         printf("Enter the limits (enter 0 for both limits to quit): \n");
         printf("lower limit: ");
@@ -77,7 +77,7 @@ bool bad_limits(long begin, long end, long low, long high)
     return not_good;
 }
 
-double sum_squres(long a, long b)
+double sum_squares(long a, long b)
 {
     double total = 0;
     long i;

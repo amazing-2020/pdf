@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define Seconds_per_day 3.156e7
 #define Mass_per_water_molecule 3.0e-23
-#define Qulity_per_quart_water 950
+#define Quality_per_quart_water 950
 
 void Inches_to_Centimeters();
 
@@ -17,7 +17,7 @@ int main(void)
     printf("Please enter the quart of water: ");
     scanf("%lf", &quarts);
     printf("The quality of %lf quarts water is %eg, and there are %e water molecules here. \n", 
-    quarts, quarts*Qulity_per_quart_water, quarts*Qulity_per_quart_water/Mass_per_water_molecule);
+    quarts, quarts*Quality_per_quart_water, quarts*Quality_per_quart_water/Mass_per_water_molecule);
     
     Inches_to_Centimeters();
 

@@ -11,7 +11,7 @@ int main(void)
     double mtime;
     int mmin, msec;
 
-    printf("This program converts your time for a mtric race \n");
+    printf("This program converts your time for a metric race \n");
     printf("to a time for running a mile and to your average \n");
     printf("speed in miles per hour. \n");
     printf("Please enter , in kilometers, the distance run. \n");

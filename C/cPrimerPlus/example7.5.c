@@ -6,7 +6,7 @@ int main(void)
     unsigned long div;
     bool isPrime;
 
-    printf("Please enter an integer for anakysis (Enter q to quit): ");
+    printf("Please enter an integer for analysis (Enter q to quit): ");
     while (scanf("%lu", &num) == 1)
     {
         for (div = 2, isPrime = true; (div * div) <= num; div++)

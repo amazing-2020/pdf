@@ -21,14 +21,14 @@ void addemup5()
     {
         sum += i;
     }
-    printf("sumn= %d \n", sum);
+    printf("sum= %d \n", sum);
 }
 
 void addemup6()
 {
     int count, sum, i = 0;
 
-    printf("Please enter an integer(squre func): ");
+    printf("Please enter an integer(square func): ");
     scanf("%d", &count);
     sum = 0;
     while (i++ <= count)

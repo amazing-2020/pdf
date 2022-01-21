@@ -5,7 +5,7 @@ int main(void)
 {
     int num;
 
-    printf("This program caculates factorials. \n");
+    printf("This program calculates factorials. \n");
     printf("Enter a value in the range 0-12 (q to quit): \n");
     while (scanf("%d", &num) == 1)
     {
@@ -16,7 +16,7 @@ int main(void)
         else 
         {
             printf("loop: %d factorial = %ld \n", num, fact(num));
-            printf("recuresion: %d factorial = %ld \n", num, rfact(num));
+            printf("recursion: %d factorial = %ld \n", num, rfact(num));
         }
         printf("Enter a value in the range 0-12 (q to quit): \n");
     }

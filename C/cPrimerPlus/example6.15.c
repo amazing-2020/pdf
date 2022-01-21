@@ -2,16 +2,16 @@
 void entry();
 int main(void)
 {
-    const int sert_code = 13;
+    const int secret_code = 13;
     int code_entered;
 
     do
     {
-        printf("To enter the thridsfdjkfls therapy club, \n");
+        printf("To enter the triskaidekaphobia therapy club, \n");
         printf("please enter the secret code number: ");
         scanf("%d", &code_entered);
-    } while (code_entered != sert_code);
-    printf("Congratunations! You are cured!!! \n");
+    } while (code_entered != secret_code);
+    printf("Congratulations! You are cured!!! \n");
 
     entry();
 
@@ -20,17 +20,17 @@ int main(void)
 
 void entry()
 {
-    const int sert_code = 13;
+    const int secret_code = 13;
     int code_entered;
 
-    printf("To enter the thridsfdjkfls therapy club, \n");
+    printf("To enter the triskaidekaphobia therapy club, \n");
     printf("please enter the secret code number: ");
     scanf("%d", &code_entered);
-    while (code_entered != sert_code) 
+    while (code_entered != secret_code) 
     {
-        printf("To enter the thridsfdjkfls therapy club, \n");
+        printf("To enter the triskaidekaphobia therapy club, \n");
         printf("please enter the secret code number: ");
         scanf("%d", &code_entered);
     }
-    printf("Congratunations! You are cured! \n");
+    printf("Congratulations! You are cured! \n");
 }

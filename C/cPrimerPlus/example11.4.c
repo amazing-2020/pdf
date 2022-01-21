@@ -17,13 +17,13 @@ int main(void)
 void arrchar(void)
 {
     const char *mytalents[LIM] = {
-        "Adding numbers swifly",
-        "Multiplying accerately", "Srashing data",
-        "Folowing instructions to the letter",
+        "Adding numbers swiftly",
+        "Multiplying accurately", "Stashing data",
+        "Following instructions to the letter",
         "Understand the C language"
     };
     char yourtalents[LIM][SLEN] = {
-        "Wallking in astraight line",
+        "Walking in straight line",
         "Sleeping", "Watching television",
         "Mailing letters", "Reading email"
     };

@@ -50,6 +50,6 @@ void wordcnt()
     
     if (prev != '\n')
         p_lines = 1; //在輸入行末尾加上 STOP
-    printf("chracters = %ld, words = %d, lines = %d, ", n_chars, n_words, n_lines);
+    printf("characters = %ld, words = %d, lines = %d, ", n_chars, n_words, n_lines);
     printf("partial lines = %d \n", p_lines);
 }

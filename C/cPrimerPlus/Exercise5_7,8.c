@@ -22,7 +22,7 @@ void moduloOperation()
     int operand;
     int number;
 
-    printf("This program cumputes moduli. \n");
+    printf("This program computes moduli. \n");
     printf("Enter an integer to serve as the second operand: ");
     scanf("%d", &operand);
     printf("Now enter the first operand: ");

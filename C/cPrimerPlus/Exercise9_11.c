@@ -7,8 +7,8 @@ int main(void)
 
     printf("Enter a number(n >= 0): ");
     scanf("%d", &n);
-    printf("The %d fivonacci number is %lu \n", n, Fibonacci(n));
-    printf("The %d fivonacci number is %lu \n", n, Fibonacci2(n));
+    printf("The %d fibonacci number is %lu \n", n, Fibonacci(n));
+    printf("The %d fibonacci number is %lu \n", n, Fibonacci2(n));
 
     return 0;
 }

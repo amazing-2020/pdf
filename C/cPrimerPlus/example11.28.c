@@ -28,9 +28,9 @@ void format(void)
 
     puts("Enter your first name: ");
     s_gets(first, MAX);
-    puts("Enter youtr last name: ");
+    puts("Enter your last name: ");
     s_gets(last, MAX);
-    puts("Enter your orize money: ");
+    puts("Enter your prize money: ");
     scanf("%lf", &prize);
     sprintf(formal, "%s, %-19s: $%6.2lf \n", last, first, prize);
     puts(formal);

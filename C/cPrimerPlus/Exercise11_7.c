@@ -33,8 +33,14 @@ int main(void)
 
 char * mystrncpy(char * aim, const char * str, size_t n)
 {
+  int str_len = strlen(str);
   for (int i = 0; i < n; ++i) {
     aim[i] = str[i];
+    if (i == str_len && str_len < n)
+    {
+      aim[str_len+1] = '\0';
+      break;
+    }
   }
   return aim;
 }

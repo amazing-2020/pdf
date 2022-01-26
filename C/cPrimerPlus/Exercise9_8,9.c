@@ -29,7 +29,7 @@ double power(double n, int p)
     if ( n == 0 || p == 0)
     {
         if ( n == 0 && p == 0)
-            printf("0 to ber powered is not defined. \n");
+            printf("0 to be powered is not defined. \n");
         pow = 1;
     }
     else
@@ -55,8 +55,8 @@ double power2(double n, int p)
     }
     if ( p == 0)
     {
-        if ( n== 0 && p == 0)
-            printf("0 to ber powered is not defined. \n");
+        if ( n == 0 && p == 0)
+            printf("0 to be powered is not defined. \n");
         num = 1;
     }
     if (p < 0)

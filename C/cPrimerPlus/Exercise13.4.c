@@ -36,6 +36,7 @@ void calculate_average()
   printf("How many number do you want to calculate: ");
   scanf("%d", &count);
   num = (float *)calloc(count, sizeof(float));
+  printf("Enter: ");
   for (int i = 0; i < count; ++i)
   {
     if ((fscanf(stdin, "%f", &num[i])) != 1)

@@ -32,8 +32,8 @@ int main(int argc, char *argv [])
    *while ((fgets(temp, SLEN, fp)) != 0)
    *  fputs(temp, copiedFile);
    */
-  fclose(fp);
   fclose(copiedFile);
+  fclose(fp);
 
   return 0;
 }

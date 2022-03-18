@@ -18,3 +18,4 @@ char * s_gets(char * st, int n)
 
     return ret_val;
 }
+//按下tab建会随机丢失输入的字符

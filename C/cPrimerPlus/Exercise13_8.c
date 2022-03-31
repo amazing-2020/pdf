@@ -30,7 +30,7 @@ int main(int argc, char *argv [])
 
       printf("Please enter the file you want to open: ");
       while ((fgets(filename, SLEN, stdin)) != NULL &&
-             filename[0] >= 32) // test the control character < 32
+             filename[0] != '\n') // test the control character < 32
       {
         rmNewline(filename);
         if ((fp = fopen(filename, "r")) != NULL) {

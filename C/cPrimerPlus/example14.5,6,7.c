@@ -16,7 +16,7 @@ int main(void)
   struct funds stan = {
       "Garlic-Melon Bank",
       4032.27,
-      "Luckys's savings and Loan",
+      "Lucky's savings and Loan",
       8543.94
   };
   printf("Stan has a total of $%.2f.\n", sum(stan.bankfund, stan.savefund));

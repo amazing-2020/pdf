@@ -55,8 +55,6 @@ int main(void)
   return 0;
 }
 
-
-
 char * s_gets(char * st, int n)
 {
   char * ret_val;

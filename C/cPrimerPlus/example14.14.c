@@ -84,4 +84,5 @@ char * s_gets(char * st, int n)
       while (getchar() != '\n')
         continue;
   }
+  return ret_val;
 }

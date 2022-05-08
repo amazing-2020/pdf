@@ -17,6 +17,7 @@ void sortByName(struct book **, int);
 void output(int n ,struct book *AListOfBook);
 void output_PT(int n, struct book * *AListOfBook);
 void quick_sort(struct book ** Element, int start, int end);
+
 int main(void)
 {
   struct book Library[MAXBKS];

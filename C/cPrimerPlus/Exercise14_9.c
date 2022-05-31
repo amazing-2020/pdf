@@ -6,13 +6,17 @@
 #define MAXNAME 40
 #define SEATN 12
 #define FILENAME "airline-14_8.dat"
-typedef struct Seats {
+struct Seats {
   char id;
   bool owned;
   char fName[MAXNAME];
   char lName[MAXNAME];
-}seat;
-int size = sizeof(seat);
+};
+typedef struct airlines {
+    int number;
+    struct Seats seat;
+}airline;
+int size = sizeof(airline);
 
 void showMenu();
 void showEmptyNum(seat *);
@@ -44,7 +48,6 @@ int main(void)
 
   /*
    * if the file doesn't exist, set the seat identification number
-   * or write it on hand, using the char array
    */
   if (!fileExist)
   {

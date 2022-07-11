@@ -27,7 +27,7 @@ int main(void)
 {
   seat airline[SEATN]={0};
   FILE * pseat;
-  bool fileExist = true, next = true;
+  bool fileExist = true;
   char choice;
 
   if ((pseat = fopen(FILENAME, "rb+")) == NULL)
@@ -65,7 +65,7 @@ int main(void)
       }
   }
   showMenu();
-  while ((choice = getchar()) != 'f' && next)
+  while ((choice = getchar()) != 'f')
   {
     rmNewLine();
     void (*pfun)(seat *) = NULL;
@@ -88,25 +88,21 @@ int main(void)
         pfunF = deleteCustomer;
         break;
       case 'f':
-        next = false;
         break;
       default:
         printf("Invalid input.\n");
         break;
     }
-    if (next)
+    if (pfun)
     {
-      if (pfun)
-      {
-        fseek(pseat, 0, SEEK_SET);
-        for (int i = 0; i < SEATN; ++i)
-          fread(&airline[i], size, 1, pseat);
-        (*pfun)(airline);
-      }
-      if (pfunF)
-        (*pfunF)(pseat, airline);
-      showMenu();
+      fseek(pseat, 0, SEEK_SET);
+      for (int i = 0; i < SEATN; ++i)
+        fread(&airline[i], size, 1, pseat);
+      (*pfun)(airline);
     }
+    if (pfunF)
+      (*pfunF)(pseat, airline);
+    showMenu();
   }
   printf("Bye!\n");
   fclose(pseat);
@@ -214,8 +210,10 @@ void deleteCustomer(FILE * fp, seat * arr)
     return;
   }
   arr[index].owned = false;
-  strcpy(arr[index].fName, "");
-  strcpy(arr[index].lName, "");
+  for (int i = 0; i < MAXNAME; ++i) {
+    arr[index].fName[i] = '\0';
+    arr[index].lName[i] = '\0';
+  }
   fseek(fp, index * size, SEEK_SET);
   if (fwrite(&arr[index], size, 1, fp) == EOF)
   {

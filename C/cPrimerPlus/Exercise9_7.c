@@ -4,9 +4,7 @@ int LetterNumber(char ch);
 
 int main(void)
 {
-    char ch;
     FILE * fp;
-    int num[1000];
 
     fp = fopen("Exercise9_7.c", "r");
     letter(fp);
@@ -17,6 +15,7 @@ void letter(FILE * fp)
 {
     char ch;
     int factor = 1;
+
     while ((ch = getc(fp)) != EOF)
     {
         if (LetterNumber(ch) == -1)

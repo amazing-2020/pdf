@@ -52,7 +52,7 @@ void fgets3()
     while (fgets(words, STLEN2_3, stdin) != NULL && words[0] != '\n')
     {
         i = 0;
-        while (words[i] != '\n' && words[i] != '\0')//Tranverse string
+        while (words[i] != '\n' && words[i] != '\0')//Transverse string
             i++;
         if (words[i] == '\n')
             words[i] = '\0';

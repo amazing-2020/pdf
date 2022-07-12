@@ -5,7 +5,7 @@
 #define RATE1 0.15
 #define RATE2 0.2
 #define RATE3 0.25
-void elimilateNewlines();
+void eliminateNewlines();
 
 int main(void)
 {
@@ -23,7 +23,7 @@ int main(void)
         printf("q) quit \n");
         printf("***************************************************************** \n");
         scanf("%c", &option);
-        elimilateNewlines();
+        eliminateNewlines();
         switch (option)
         {
             case '1': basicWage = 8.75;
@@ -42,7 +42,7 @@ int main(void)
 
         printf("Please enter your work time: ");
         scanf("%lf", &workTime);
-        elimilateNewlines();
+        eliminateNewlines();
         if (workTime <= 40.0)
             salary = basicWage * workTime; 
         else
@@ -61,7 +61,7 @@ int main(void)
     return 0;
 }
 
-void elimilateNewlines()
+void eliminateNewlines()
 {
     while (getchar() != '\n')
         continue;

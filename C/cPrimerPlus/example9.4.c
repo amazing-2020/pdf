@@ -13,8 +13,8 @@ int main(void)
 
 void misuse(void)
 {
-    printf("The maxinum of %d and %d is %d. \n", 3, 5, imax(3));
-    printf("The maxinum of %d and %d is %d. \n", 3, 5, imax(3.0, 5.0));
+    printf("The maximum of %d and %d is %d. \n", 3, 5, imax(3));
+    printf("The maximum of %d and %d is %d. \n", 3, 5, imax(3.0, 5.0));
 }
 
 int imax(n, m)
@@ -25,8 +25,8 @@ int n, m;
 
 void proto(void)
 {
-    printf("The maxinum of %d and %d is %d. \n", 3, 5, imax2(3, 5));
-    printf("The maxinum of %d and %d is %d. \n", 3, 5, imax2(3.0, 5.0));
+    printf("The maximum of %d and %d is %d. \n", 3, 5, imax2(3, 5));
+    printf("The maximum of %d and %d is %d. \n", 3, 5, imax2(3.0, 5.0));
 }
 
 int imax2(int m, int n)

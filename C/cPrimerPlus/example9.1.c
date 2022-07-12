@@ -2,7 +2,7 @@
 #include <string.h>
 #define NAME "GIGATHINK, INC."
 #define ADDRESS "101 Megabuck Plaza"
-#define PLACE "Magepolis, CA 94904"
+#define PLACE "Megapolis, CA 94904"
 #define WIDTH 40
 #define SPACE ' '
 void lethead1(void);

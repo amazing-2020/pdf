@@ -53,8 +53,7 @@ void menu()
 float getNumber(char option, int i)
 {
     float num;
-    int factor;
-    
+
     if ( i == 1)
     {
         printf("Please enter first number: ");

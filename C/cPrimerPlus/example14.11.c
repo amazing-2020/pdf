@@ -4,7 +4,7 @@
 
 struct book {
   char title[MAXTITL];
-  char auther[MAXAUTL];
+  char author[MAXAUTL];
   float value;
 };
 
@@ -18,7 +18,7 @@ int main(void)
 
   if (score >= 84)
     readfirst = (struct book) {"Crime and punishment",
-                              "Pyodor Dostoyevsky",
+                              "Fyodor Dostoyevsky",
                               11.25
     };
   else
@@ -27,7 +27,7 @@ int main(void)
                                 5.99
     };
   printf("Your assigned reading:\n");
-  printf("%s by %s, $%.2f\n", readfirst.title, readfirst.auther, readfirst.value);
+  printf("%s by %s, $%.2f\n", readfirst.title, readfirst.author, readfirst.value);
 
   return 0;
 }

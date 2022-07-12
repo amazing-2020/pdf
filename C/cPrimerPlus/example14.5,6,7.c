@@ -10,7 +10,7 @@ struct funds {
 
 double sum(double , double );//The arguments are two double variable
 double sum2(const struct funds *); //The argument is a pointer
-double sum3(struct funds moolah);//The argumant is a struct
+double sum3(struct funds moolah);//The argument is a struct
 int main(void)
 {
   struct funds stan = {

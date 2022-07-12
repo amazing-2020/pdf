@@ -3,7 +3,7 @@
 void Prime(int n);
 int main(void)
 {
-    int num, i, j;
+    int num, i;
 
     while (1)
     {

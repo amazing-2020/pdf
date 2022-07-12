@@ -25,10 +25,10 @@ int main(void)
     printf("\nPointers reset to original values: \n");
     printf("ptr1 = %p, ptr2 = %p \n", ptr1, ptr2);
     //address subtract
-    printf("\nsubstracting one poiter from another: \n");
+    printf("\nsubtracting one pointer from another: \n");
     printf("ptr2 = %p, ptr1 = %p, ptr2 - ptr1 = %td \n", ptr2, ptr1, ptr2 - ptr1);
     //substract a digit
-    printf("\nsubstracting an int from a poointer: \n");
+    printf("\nsubtracting an int from a pointer: \n");
     printf("ptr3 = %p, ptr3 - 2 = %p \n", ptr3, ptr3 - 2);
 
     return 0;

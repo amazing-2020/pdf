@@ -32,16 +32,16 @@ void sumOfSquare()
     long sum = 0;
 
     printf("Please enter lower and upper integer limits: ");
-    scanf("%ld %ld", &low, &heigh);
+    scanf("%ld %ld", &low, &high);
     while (low < high)
     {
-        for (long i = low; i <= heigh; i++)
+        for (long i = low; i <= high; i++)
         {
             sum += i*i;
         }
         printf("The sums of the squares from %ld to %ld is %ld \n", low*low, high*high, sum);
         printf("Enter next set of limits: ");
-        scanf("%ld %ld", &low, &heigh);
+        scanf("%ld %ld", &low, &high);
     }
     printf("Done! \n");
 }

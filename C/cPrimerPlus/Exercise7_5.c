@@ -2,7 +2,7 @@
 #define STOP '#'
 int main(void)
 {
-    const char period = '.', exclamationMark = '!';
+    const char exclamationMark = '!';
 
     int numbers = 0, i;
     char ch[100], character;

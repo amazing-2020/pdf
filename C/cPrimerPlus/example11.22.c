@@ -7,12 +7,12 @@
 #define LISTAIZE 6
 void compback(void);
 void quit_chk(void);
-void starsch(void);
+void starsrch(void);
 int main(void)
 {
     compback();
     quit_chk();
-    starsch();
+    starsrch();
 
     return 0;
 }
@@ -49,7 +49,7 @@ void quit_chk(void)
     printf("%d string entered! \n", ct);
 }
 
-void starsch(void)
+void starsrch(void)
 {
     const char * list[LISTAIZE] = 
     {

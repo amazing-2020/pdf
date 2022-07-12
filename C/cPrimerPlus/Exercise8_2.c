@@ -4,7 +4,6 @@ int main(void)
 {
     char ch;
     int num;
-    int factor;
 
     while ((ch = getchar()) != EOF)
     {

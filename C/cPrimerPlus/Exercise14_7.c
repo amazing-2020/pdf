@@ -28,15 +28,31 @@ int main(void)
   int index, filecount;
   FILE * pbooks;
   int size = sizeof(struct book);
+  int trueSize = size - sizeof(int);
 
   if ((pbooks = fopen(FILENAME, "r+b")) == NULL)
   {
     fputs("Can't open the file book-14_7.dat.\n", stderr);
-    exit(1);
+    if ((pbooks = fopen(FILENAME, "w+b")) != NULL)
+    {
+      printf("Create the data file %s\n", FILENAME);
+      fclose(pbooks);
+      if ((pbooks =fopen(FILENAME, "r+b")) == NULL)
+      {
+        fputs("Can't open the file book-14_7.dat.\n", stderr);
+        exit(1);
+      }
+    } else {
+      fputs("Can't create the file book-14_7.dat.\n", stderr);
+      exit(1);
+    }
   }
 
+  /*
+   * edit the data and modify the record weather delete it or not
+   */
   rewind(pbooks);
-  while (count < MAXBKS && fread(&library[count], size, 1, pbooks) == 1)
+  while (count < MAXBKS && fread(&library[count], trueSize, 1, pbooks) == 1)
   {
     if (count == 0)
       puts("Current contents of book.dat.");
@@ -63,7 +79,7 @@ int main(void)
       if (getchar() == 'y')
       {
         int i;
-        void ( *pfun)(FILE *,struct book *, int, int);
+        void (*pfun)(FILE *,struct book *, int, int);
 
         rm_newLine();
         printf("%sWhich item do you want to change?\n", STAR);
@@ -88,7 +104,7 @@ int main(void)
             printf("Invalid option!\n");
             break;
           }
-          (*pfun)(pbooks, library, count, size);
+          (*pfun)(pbooks, library, count, trueSize);
       } else{
         rm_newLine();
       }
@@ -104,15 +120,16 @@ int main(void)
   }
 
   /*
-   * rewrite the information to the arr that should be deleted
+   * move the information to the position that should be deleted
    */
   for (int i = 0; i < count; ++i) {
     if (!library[i].exist)
     {
       printf("\t%sChange the record %d%s\n", HORIZONTAL, i, HORIZONTAL);
       getInfo(library, i);
-      fseek(pbooks, i * size, SEEK_SET);
-      fwrite(&library[i], size, 1, pbooks);
+
+      fseek(pbooks, i * trueSize, SEEK_SET);
+      fwrite(&library[i], trueSize, 1, pbooks);
       printf("%sChanged!\n", PLUS);
     }
   }
@@ -124,7 +141,14 @@ int main(void)
   while (count < MAXBKS && s_gets(library[count].title, MAXTITL) != NULL
          && library[count].title[0] != '\0')
   {
-    getInfo(library, count);
+    //getInfo(library, count);
+    puts("Now enter the author.");
+    s_gets(library[count].author, MAXAUTL);
+    puts("Now enter the value.");
+    scanf("%f", &library[count].value);
+    rm_newLine();
+    if (count < MAXBKS)
+      puts("Enter the next title.");
     count++;
   }
 
@@ -136,7 +160,10 @@ int main(void)
     puts("Here is the list of your books:");
     for (index = 0; index < count; ++index)
       printf("%s by %s: $%.2f\n", library[index].title, library[index].author, library[index].value);
-    fwrite(&library[filecount], size, count - filecount, pbooks);
+    for (int i = filecount; i < count; ++i) {
+      fwrite(&library[i], trueSize, 1, pbooks);
+    }
+    //fwrite(&library[filecount], size, count - filecount, pbooks);
   }
   else
     puts("No books? Too bad.");
@@ -189,8 +216,8 @@ void changeValue(FILE * pbooks, struct book * lib, int n, int size)
 {
   printf("Enter the new value: ");
   scanf("%f", &(lib[n].value));
-  fseek(pbooks, -8, SEEK_CUR);
-  fwrite(&(lib[n].value), 8, 1, pbooks);
+  fseek(pbooks, -sizeof(float), SEEK_CUR);
+  fwrite(&(lib[n].value), sizeof(float), 1, pbooks);
   rm_newLine();
 }
 

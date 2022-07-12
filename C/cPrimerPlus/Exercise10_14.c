@@ -6,7 +6,7 @@ double maxNUM(int i, int j, double array[i][j]);
 void print(int i, int j, double array[i][j]);
 int main(void)
 {
-    double array[3][5], num;
+    double array[3][5];
 
     storage(3, 5, array);
     print(3, 5, array);

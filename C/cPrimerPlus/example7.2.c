@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <ctype.h>
 #define SPACE ' '
-void cyper1();
-void cyper2();
+void cypher1();
+void cypher2();
 int main(void)
 {
-    printf("Cyper1: \n");
-    cyper1();
-    printf("Cyper2: \n");
-    cyper2();
+    printf("Cypher1: \n");
+    cypher1();
+    printf("Cypher2: \n");
+    cypher2();
 
     return 0;
 }
 
-void cyper1()
+void cypher1()
 {
     char ch;
 
@@ -29,7 +29,7 @@ void cyper1()
     putchar(ch);
 }
 
-void cyper2()
+void cypher2()
 {
     char ch;
 

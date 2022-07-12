@@ -1,13 +1,13 @@
 #include <stdio.h>
 void printLowercaseLetters();
 void printCharacters();
-void printFormatedLetters();
+void printFormattedLetters();
 void printLettersWithThisFormat();
 int main(void)
 {
     printLowercaseLetters();
     printCharacters();
-    printFormatedLetters();
+    printFormattedLetters();
     printLettersWithThisFormat();
 
     return 0;
@@ -45,7 +45,7 @@ void printCharacters()
     }
 }
 
-void printFormatedLetters()
+void printFormattedLetters()
 {
     const char Letters = 'F';
     char letter;

@@ -40,6 +40,7 @@ double funcB(double a)
 {
   return a * a;
 }
+
 void show(double * a, double * b, int n)
 {
   for (int i = 0; i < n/10; ++i) {

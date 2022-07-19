@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 int binToI(char *);
 
 int main(void)
@@ -24,7 +25,8 @@ int binToI(char * ps)
   for (int i = len - 1; i >= 0 ; i--, m *= 2)
   {
     int a = (ps[i] - '0') * m;
-    if(i == 0 && len == sizeof(int) * 4) // ps is a positive integer by default
+    if(i == 0 && len == sizeof(int) * CHAR_BIT)
+      // calculate the sig bit if the number has 32 bit
       n += -1 * a;
     else
       n += a;

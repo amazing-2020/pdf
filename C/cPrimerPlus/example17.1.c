@@ -22,7 +22,7 @@ int main(void)
     scanf("%d", &movies[i++].rating);
     while (getchar() != '\n')
       continue;
-    puts("Enter another movie title, (Empty line to quit)");
+    puts("Enter next movie title, (Empty line to quit)");
   }
   if (i == 0)
     printf("No data entered. ");

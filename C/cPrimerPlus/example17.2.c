@@ -31,7 +31,7 @@ int main(void)
     scanf("%d", &current->rating);
     while (getchar() != '\n')
       continue;
-    puts("Enter another movie title, (Empty line to quit)");
+    puts("Enter next movie title, (Empty line to quit)");
     prev = current;
   }
   if (head == NULL)

@@ -7,7 +7,7 @@ void showmovies(Item item);
 char * s_gets(char * st, int n);
 int main(void)
 {
-  List movies;
+  List movies;1
   Item temp;
 
   InitializeList(&movies);

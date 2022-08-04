@@ -6,10 +6,14 @@ static void CopyToNode(Item item, Node * pnode);
 
 void InitializeList(List * plist)
 {
+  /*
+   * It means that the pointer which point to a "Node *" type variable
+   * (here is 'movies') is set to NULL
+   */
   *plist = NULL;
 }
 
-bool ListIsEmpty(const List *plist)
+bool ListIsEmpty(const List * plist)
 {
   if (*plist == NULL)
     return true;
@@ -17,7 +21,7 @@ bool ListIsEmpty(const List *plist)
     return false;
 }
 
-bool ListIsFull(const List *plist)
+bool ListIsFull(const List * plist)
 {
   Node * pt;
   bool full;
@@ -32,7 +36,7 @@ bool ListIsFull(const List *plist)
   return full;
 }
 
-unsigned int ListItemCount(const List *plist)
+unsigned int ListItemCount(const List * plist)
 {
   unsigned int count = 0;
   Node * pnode = *plist;
@@ -69,9 +73,9 @@ bool AddItem(Item item, List * plist)
   return true;
 }
 
-void Traverse(const List *plist, void(*pfun)(Item item))
+void Traverse(const List * plist, void(*pfun)(Item item))
 {
-  Node  * pnode = *plist;
+  Node * pnode = *plist;
 
   while (pnode != NULL)
   {

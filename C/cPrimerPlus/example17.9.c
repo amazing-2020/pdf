@@ -1,4 +1,4 @@
-// compile with the queue_17.7.c
+// compile with the queue_17.9.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

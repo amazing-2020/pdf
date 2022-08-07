@@ -1,0 +1,12 @@
+places = ['Eiffel Tower', 'The Colosseum', 'Statue of Liberty', 'Machu Picchu', 'The Acropolis', 'Pyramids of Giza']
+print(places)
+print(sorted(places))
+print(places)
+places.reverse()
+print(places)
+places.reverse()
+print(places)
+places.sort()
+print(places)
+places.sort(reverse=True)
+print(places)

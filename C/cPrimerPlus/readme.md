@@ -1,2 +1,2 @@
 # C Primer Plus
-chapter**1** to chapter**17**
+chapter**3** to chapter**17**

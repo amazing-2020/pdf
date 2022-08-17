@@ -30,6 +30,9 @@ bool QueueIsEmpty(const Queue * pq);
 
 int QueueItemCount(const Queue * pq);
 
+/*
+ * add a node to an existing queue
+ */
 bool EnQueue(Item item, Queue * pq);
 
 bool DeQueue(Item * pitem, Queue * pq);

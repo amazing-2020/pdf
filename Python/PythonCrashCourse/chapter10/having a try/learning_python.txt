@@ -1,0 +1,3 @@
+In Python, you can learn to write conditional tests, which allow you to check any condition of interest.
+In Python, you can write simple if statements and how to create a more complex series of if statements to identify when the exact conditions you want are present.
+In Python, you can write certain functions whose primary job is to display information and other functions designed to process data and return a value or set of values.

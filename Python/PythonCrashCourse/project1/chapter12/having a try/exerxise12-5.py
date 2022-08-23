@@ -2,12 +2,12 @@ import sys
 import pygame
 
 
-class BackgroudColor:
+class AlienInvasion:
     def __init__(self):
         pygame.init()
 
         self.screen = pygame.display.set_mode((1200, 800))
-        pygame.display.set_caption("Fill Color")
+        pygame.display.set_caption("Show Events")
 
     def run_game(self):
         while True:
@@ -18,13 +18,17 @@ class BackgroudColor:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                print(event.key)
+            elif event.type == pygame.KEYUP:
+                pass
 
     def _update_screen(self):
-        self.screen.fill((99, 80, 250))
+        self.screen.fill((230, 230, 230))
 
         pygame.display.flip()
 
 
 if __name__ == '__main__':
-    bc = BackgroudColor()
-    bc.run_game()
+    ai = AlienInvasion()
+    ai.run_game()

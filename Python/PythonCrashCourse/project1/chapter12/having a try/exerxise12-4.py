@@ -72,28 +72,26 @@ class Move:
                 self.check_keyup_events(event)
 
     def check_keydown_events(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT:
-                self.space_ship.moving_right = True
-            elif event.key == pygame.K_LEFT:
-                self.space_ship.moving_left = True
-            elif event.key == pygame.K_UP:
-                self.space_ship.moving_up = True
-            elif event.key == pygame.K_DOWN:
-                self.space_ship.moving_down = True
-            elif event.key == pygame.K_q:
-                sys.exit()
+        if event.key == pygame.K_RIGHT:
+            self.space_ship.moving_right = True
+        elif event.key == pygame.K_LEFT:
+            self.space_ship.moving_left = True
+        elif event.key == pygame.K_UP:
+            self.space_ship.moving_up = True
+        elif event.key == pygame.K_DOWN:
+            self.space_ship.moving_down = True
+        elif event.key == pygame.K_q:
+            sys.exit()
 
     def check_keyup_events(self, event):
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_RIGHT:
-                self.space_ship.moving_right = False
-            elif event.key == pygame.K_LEFT:
-                self.space_ship.moving_left = False
-            elif event.key == pygame.K_UP:
-                self.space_ship.moving_up = False
-            elif event.key == pygame.K_DOWN:
-                self.space_ship.moving_down = False
+        if event.key == pygame.K_RIGHT:
+            self.space_ship.moving_right = False
+        elif event.key == pygame.K_LEFT:
+            self.space_ship.moving_left = False
+        elif event.key == pygame.K_UP:
+            self.space_ship.moving_up = False
+        elif event.key == pygame.K_DOWN:
+            self.space_ship.moving_down = False
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)

@@ -52,9 +52,8 @@ class StarInvasion:
                 self.check_keydown_events(event)
 
     def check_keydown_events(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_q:
-                sys.exit()
+        if event.key == pygame.K_q:
+            sys.exit()
 
     def _create_fleet(self):
         star = Star(self)

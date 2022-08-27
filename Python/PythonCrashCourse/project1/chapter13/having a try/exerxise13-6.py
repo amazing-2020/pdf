@@ -232,6 +232,7 @@ class Move:
         self.status.space_ship_hitted += 1
         if self.status.space_ship_left > 0:
             self.status.space_ship_left -= 1
+            self.status.space_ship_hitted += 1
 
             self.aliens.empty()
             self.bullets.empty()

@@ -7,13 +7,13 @@ void showmovies(Item item);
 char * s_gets(char * st, int n);
 int main(void)
 {
-  List movies;1
+  List movies;
   Item temp;
 
   InitializeList(&movies);
   if (ListIsFull(&movies))
   {
-    fprintf(stderr, "No memory is available!! Bye!\n");
+    fprintf(stderr, "No memory is available! Bye!\n");
     exit(1);
   }
 

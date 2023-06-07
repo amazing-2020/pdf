@@ -2,12 +2,15 @@
 #ifndef _STACK_H_
 #define _STACK_H_
 #include <stdbool.h>
-typedef struct item {
-  int gumption;
-  char charisma;
-}Item;
+#define NLEN 30
+#define MAXSTACK 20
 
-#define MAXSTACK 10
+struct item {
+  double cost;
+  char brand[NLEN];
+};
+
+typedef struct item Item;
 
 typedef struct node {
   Item item;
@@ -15,21 +18,24 @@ typedef struct node {
 }Node;
 
 typedef struct stack {
+  Node * top;
   Node * rear;
   int items;
 }Stack;
 
+//typedef Node * Stack;
+
 void InitializeStack(Stack * ps);
 
-bool StackIsFull(Stack * ps);
+bool StackIsFull(const Stack * ps);
 
-bool StackIsEmpty(Stack * ps);
+bool StackIsEmpty(const Stack * ps);
 
-bool StackItemCount(Stack * ps);
+unsigned int StackItemCount(const Stack * ps);
 
-bool EnStack(Stack * ps);
+bool EnStack(const Item item, Stack * ps);
 
-bool DeStack(Stack * ps);
+void Traverse(const Stack * ps, void(*pfun)(Item item));
 
 void EmptyTheStack(Stack * ps);
 

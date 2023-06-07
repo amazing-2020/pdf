@@ -246,7 +246,7 @@ static void DeleteNode(Trnode **ptr)
   }
   else
   {
-    for (temp = (*ptr)->left;  temp->right != NULL; temp->right)
+    for (temp = (*ptr)->left;  temp->right != NULL; temp = temp->right)
       continue;
     temp->right = (*ptr)->right;
     temp = *ptr;

@@ -4,7 +4,7 @@
 
 typedef struct item {
   long arrive; //the time when a customer joins the queue
-  int processtime;
+  int processtime; //1~3min, in this program
 }Item;
 
 #define MAXQUEUE 10

@@ -1,7 +1,7 @@
 //compile with tree.c
 #include <stdio.h>
 #include <string.h>
-#include "ctype.h"
+#include <ctype.h>
 #include "tree.h"
 
 char menu(void);

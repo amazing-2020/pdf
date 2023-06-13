@@ -56,7 +56,7 @@ void showmovies(Item item)
   printf("Movie: %s Rating: %d\n", item.title, item.rating);
 }
 
-char * s_gets(char *st, int n)
+char * s_gets(char * st, int n)
 {
   char * ret_val;
   char * find;

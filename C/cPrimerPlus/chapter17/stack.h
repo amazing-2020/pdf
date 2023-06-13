@@ -2,12 +2,10 @@
 #ifndef _STACK_H_
 #define _STACK_H_
 #include <stdbool.h>
-#define NLEN 30
-#define MAXSTACK 20
+#define MAX_SIZE 1000
 
 struct item {
-  double cost;
-  char brand[NLEN];
+  char ch;
 };
 
 typedef struct item Item;
@@ -19,11 +17,8 @@ typedef struct node {
 
 typedef struct stack {
   Node * top;
-  Node * rear;
   int items;
 }Stack;
-
-//typedef Node * Stack;
 
 void InitializeStack(Stack * ps);
 

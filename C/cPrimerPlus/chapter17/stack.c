@@ -4,10 +4,11 @@
 #include "stack.h"
 
 static void CopyToNode(const Item item, Node * pn);
+static void DeleteNode(const Item * pi, Stack * ps);
 
 void InitializeStack(Stack * ps)
 {
-  ps->rear = ps->top = NULL;
+  ps->top = NULL;
   ps->items = 0;
 }
 
@@ -17,7 +18,7 @@ bool StackIsFull(const Stack * ps)
   bool full;
 
   pt = (Node *)malloc(sizeof(Node));
-  if (pt == NULL || ps->items == MAXSTACK)
+  if (pt == NULL)
     full = true;
   else
     full = false;
@@ -28,7 +29,10 @@ bool StackIsFull(const Stack * ps)
 
 bool StackIsEmpty(const Stack * ps)
 {
-  return ps->items == 0;
+  if (ps->top == NULL)
+    return true;
+  else
+    return false;
 }
 
 unsigned int StackItemCount(const Stack * ps)
@@ -51,7 +55,7 @@ bool EnStack(const Item item, Stack * ps)
   CopyToNode(item, pnew);
   if (StackIsEmpty(ps))
   {
-    ps->top = ps->rear = pnew;
+    ps->top = pnew;
     pnew->last = NULL;
   }
   else
@@ -66,7 +70,7 @@ bool EnStack(const Item item, Stack * ps)
 
 void Traverse(const Stack * ps, void(*pfun)(Item item))
 {
-  Node * pnode = (*ps).top;
+  Node * pnode = ps->top;
 
   while (pnode != NULL)
   {
@@ -85,7 +89,6 @@ void EmptyTheStack(Stack * ps)
     ps->top = temp;
     ps->items--;
   }
-  ps->rear = NULL;
 }
 
 static void CopyToNode(const Item item, Node * pn)

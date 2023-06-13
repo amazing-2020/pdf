@@ -11,7 +11,7 @@ struct film {
   struct film * last; //add
 };
 
-char * s_gets(char *st, int n);
+char * s_gets(char * st, int n);
 void show_film_reverse(const struct film * pf); //add
 
 int main(void)
@@ -91,7 +91,7 @@ void show_film_reverse(const struct film * pf)
 /*
  * add end
  */
-char * s_gets(char *st, int n)
+char * s_gets(char * st, int n)
 {
   char * ret;
   char * find;

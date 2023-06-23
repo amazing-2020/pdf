@@ -182,8 +182,16 @@ static Pair SeekItem(const Item * pi, const Tree * ptree)
 
   if (look.child == NULL)
     return look;
+
   while (look.child != NULL)
   {
+    /*
+     *  For the item structure to be searched, it is either in the left or right
+     *  subtree. If neither is true, it indicates that the item does not exist for
+     *  the subtrees on both sides currently being searched, indicating that the
+     *  root node of the subtrees on both sides is the item
+     *  Only the loop condition means that the item does not exist
+     */
     if (ToLeft(pi, &(look.child->item)))
     {
       look.parent = look.child;

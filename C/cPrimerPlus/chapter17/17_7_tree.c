@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "tree.h"
+#include "17_7_tree.h"
 
 typedef struct pair {
   Trnode * parent;
@@ -14,7 +14,6 @@ static bool ToRight(const Item * i1, const Item * i2);
 static void AddNode(Trnode * new_node, Trnode * root);
 static void InOrder(const Trnode * root, void(*pfun) (Item item));
 static Pair SeekItem(const Item * pi, const Tree * ptree);
-static void DeleteNode(Trnode **ptr);
 static void DeleteAllNodes(Trnode * ptr);
 
 
@@ -54,10 +53,10 @@ bool AddItem(const Item * pi, Tree * ptree)
     fprintf(stderr, "Tree is full.\n");
     return false;
   }
-  if (SeekItem(pi, ptree).child != NULL)
+  if ((new_node = SeekItem(pi, ptree).child)!= NULL)
   {
-    fprintf(stderr, "Attempted to add duplicate item.\n");
-    return false;
+    new_node->item.n++;
+    return true;
   }
   new_node = MakeNode(pi);
   if (new_node == NULL)
@@ -71,34 +70,16 @@ bool AddItem(const Item * pi, Tree * ptree)
     ptree->root = new_node;
   else
     AddNode(new_node, ptree->root);
-
   return true;
 }
 
-bool InTree(const Item * pi, const Tree * ptree)
+int InTree(const Item * pi, const Tree * ptree)
 {
-  return (SeekItem(pi, ptree).child == NULL) ? false : true;
-}
-
-bool DeleteItem(const Item * pi, Tree * ptree)
-{
-  Pair look;
-
-  look = SeekItem(pi, ptree);
-  if (look.child == NULL)
-  {
-    printf("Null\n");
-    return false;
-  }
-  if (look.parent == NULL)
-    DeleteNode(&ptree->root);
-  else if (look.parent->left == look.child)
-    DeleteNode(&look.child->left);
+  Trnode * temp = SeekItem(pi, ptree).child;
+  if (temp != NULL)
+    return temp->item.n;
   else
-    DeleteNode(&look.child->right);
-  ptree->size--;
-
-  return true;
+    return 0;
 }
 
 void Traverse(const Tree * ptree, void (*pfun)(Item item))
@@ -163,11 +144,7 @@ static void AddNode(Trnode * new_node, Trnode * root)
 
 static bool ToLeft(const Item * i1, const Item * i2)
 {
-  int comp1;
-
-  if ((comp1 = strcmp(i1->petname, i2->petname)) < 0)
-    return true;
-  else if (comp1 == 0 && strcmp(i1->petkind, i2->petkind) < 0)
+  if ((strcmp(i1->word, i2->word)) < 0)
     return true;
   else
     return false;
@@ -175,11 +152,7 @@ static bool ToLeft(const Item * i1, const Item * i2)
 
 static bool ToRight(const Item * i1, const Item * i2)
 {
-  int comp1;
-
-  if ((comp1 = strcmp(i1->petname, i2->petname)) > 0)
-    return true;
-  else if (comp1 == 0 && strcmp(i1->petkind, i2->petkind) > 0)
+  if ((strcmp(i1->word, i2->word)) > 0)
     return true;
   else
     return false;
@@ -225,31 +198,4 @@ static Pair SeekItem(const Item * pi, const Tree * ptree)
       break;
   }
   return look;
-}
-
-static void DeleteNode(Trnode **ptr)
-{
-  Trnode * temp;
-
-  if ((*ptr)->left == NULL)
-  {
-    temp = *ptr;
-    *ptr = (*ptr)->right;
-    free(temp);
-  }
-  else if ((*ptr)->right == NULL)
-  {
-    temp = *ptr;
-    *ptr = (*ptr)->left;
-    free(temp);
-  }
-  else
-  {
-    for (temp = (*ptr)->left;  temp->right != NULL; temp = temp->right)
-      continue;
-    temp->right = (*ptr)->right;
-    temp = *ptr;
-    *ptr = (*ptr)->left;
-    free(temp);
-  }
 }

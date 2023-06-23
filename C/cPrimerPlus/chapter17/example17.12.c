@@ -87,10 +87,10 @@ void addpet(Tree * pt)
     s_gets(temp.petkind, SLEN);
     uppercase(temp.petname);
     uppercase(temp.petkind);
-   if (AddItem(&temp, pt))
-     puts("Success");
-   else
-     printf("WRong\n");
+    if (AddItem(&temp, pt))
+      puts("Success");
+    else
+      printf("Wrong\n");
   }
 }
 

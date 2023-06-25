@@ -293,7 +293,7 @@ static void DeleteNode(Trnode **ptr)
 }
 
 /*
- * How o record the pointer to the current object
+ * How to record the pointer to the current object
  */
 static void DeleteKind(Item * pi, Kind * pk)
 {

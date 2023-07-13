@@ -1,16 +1,95 @@
 import sys
+import os
 from time import sleep
-
+from pathlib import Path
 import pygame
-
-
+from pygame.sprite import Group
+from pygame.sprite import Sprite
+import random
+a_dir = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(a_dir)
 from settings import Settings
 from game_stats import GameStats
 from button import Button
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
-from scoreboard import ScoreBoard
+
+
+class ScoreBoard:
+    def __init__(self, ai_game):
+        self.ai_game = ai_game
+        self.screen = ai_game.screen
+        self.settings = ai_game.settings
+        self.screen_rect = ai_game.screen.get_rect()
+        self.stats = ai_game.stats
+
+        self.text_color = (30, 30, 30)
+        self.font = pygame.font.SysFont(None, 48)
+        self.read_high_score()
+        self.prep_high_score()
+        self.prep_image()
+
+    def prep_score(self):
+        rounded_score = round(self.stats.score, -1)
+        score_str = "{:,}".format(rounded_score)
+        self.score_image = self.font.render(score_str, True,
+                                            self.text_color, self.settings.bg_color)
+        self.score_rect = self.score_image.get_rect()
+        self.score_rect.right = self.screen_rect.right - 20
+        self.score_rect.top = 20
+
+    def prep_high_score(self):
+        high_score = round(self.stats.high_score, -1)
+        high_score_str = "{:,}".format(high_score)
+        self.high_score_image = self.font.render(high_score_str, True,
+                                                 self.text_color, self.settings.bg_color)
+        self.high_score_rect = self.high_score_image.get_rect()
+        self.high_score_rect.centerx = self.screen_rect.centerx
+        self.high_score_rect.top = self.screen_rect.top
+
+    def prep_level(self):
+        level_str = str(self.stats.level)
+        self.level_image = self.font.render(level_str, True,
+                                            self.text_color, self.settings.bg_color)
+        self.level_rect = self.level_image.get_rect()
+        self.level_rect.right = self.score_rect.right
+        self.level_rect.top = self.score_rect.bottom + 10
+
+    def prep_ships(self):
+        self.ships = Group()
+        for ship_number in range(self.stats.ships_left):
+            ship = Ship(self.ai_game)
+            ship.rect.x = 10 + ship_number * ship.rect.width
+            ship.rect.y = 10
+            self.ships.add(ship)
+
+    def check_high_score(self):
+        if self.stats.score > self.stats.high_score:
+            self.stats.high_score = self.stats.score
+            self.prep_high_score()
+
+    def show_score(self):
+        self.screen.blit(self.score_image, self.score_rect)
+        self.screen.blit(self.high_score_image, self.high_score_rect)
+        self.screen.blit(self.level_image, self.level_rect)
+        self.ships.draw(self.screen)
+
+    def prep_image(self):
+        self.prep_score()
+        self.prep_level()
+        self.prep_ships()
+
+    def read_high_score(self):
+        path = Path("high_score.txt")
+        try:
+            data = path.read_text()
+        except FileNotFoundError:
+            pass
+        else:
+            self.stats.high_score = int(data)
+
+
 
 
 class AlienInvasion:
@@ -63,9 +142,7 @@ class AlienInvasion:
             self.stats.reset_stats()
             self.settings.initialize_dynamic_settings()
             self.stats.game_active = True
-            self.sb.prep_score()
-            self.sb.prep_level()
-            self.sb.prep_ships()
+            self.sb.prep_image()
 
             self.aliens.empty()
             self.bullets.empty()
@@ -81,6 +158,7 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
+            self.write_data()
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
@@ -90,6 +168,16 @@ class AlienInvasion:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
+
+    def write_data(self):
+        path = Path("high_score.txt")
+        try:
+            data = path.read_text()
+        except FileNotFoundError:
+            path.write_text(str(self.stats.high_score))
+        else:
+            if self.stats.high_score > int(data):
+                path.write_text(str(self.stats.high_score))
 
     def _fire_bullet(self):
         if len(self.bullets) < self.settings.bullet_allowed:
@@ -108,18 +196,21 @@ class AlienInvasion:
     def _check_bullet_alien_collisions(self):
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
         if not self.aliens:
-            self.bullets.empty()
-            self._create_fleet()
-            self.settings.increase_speed()
-
-            self.stats.level += 1
-            self.sb.prep_level()
+            self.start_new_level()
 
         if collisions:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
+
+    def start_new_level(self):
+        self.bullets.empty()
+        self._create_fleet()
+        self.settings.increase_speed()
+
+        self.stats.level += 1
+        self.sb.prep_level()
 
     def _update_aliens(self):
         self._check_fleet_edges()
@@ -128,6 +219,7 @@ class AlienInvasion:
         if pygame.sprite.spritecollideany(self.ship, self.aliens):
             self._ship_hit()
             self.sb.prep_ships()
+            print("Ship hit!!!")
 
         self._check_aliens_bottom()
 

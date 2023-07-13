@@ -1,5 +1,8 @@
 import pygame
 from pygame.sprite import Sprite
+import os
+
+imgdir = os.path.dirname(__file__) + '/images/'
 
 
 class Ship(Sprite):
@@ -9,7 +12,7 @@ class Ship(Sprite):
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
 
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load(imgdir + 'ship.bmp')
         self.rect = self.image.get_rect()
 
         self.rect.midbottom = self.screen_rect.midbottom
@@ -33,4 +36,3 @@ class Ship(Sprite):
     def center_ship(self):
         self.rect.midbottom = self.screen_rect.midbottom
         self.x = float(self.rect.x)
-

@@ -21,7 +21,7 @@ class AlienInvasion:
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
 
-        self.status = GameStats(self)
+        self.stats = GameStats(self)
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
@@ -32,7 +32,7 @@ class AlienInvasion:
         while True:
             self._check_events()
 
-            if self.status.game_active:
+            if self.stats.game_active:
                 self.ship.update()
                 self._update_bullets()
                 self._update_aliens()
@@ -128,8 +128,8 @@ class AlienInvasion:
         self.settings.fleet_direction *= -1
 
     def _ship_hit(self):
-        if self.status.ships_left > 0:
-            self.status.ships_left -= 1
+        if self.stats.ships_left > 0:
+            self.stats.ships_left -= 1
 
             self.aliens.empty()
             self.bullets.empty()
@@ -139,7 +139,7 @@ class AlienInvasion:
 
             sleep(0.5)
         else:
-            self.status.game_active = False
+            self.stats.game_active = False
 
     def _check_aliens_bottom(self):
         screen_rect = self.screen.get_rect()

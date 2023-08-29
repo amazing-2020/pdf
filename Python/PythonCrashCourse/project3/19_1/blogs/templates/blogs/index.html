@@ -1,0 +1,42 @@
+{% extends 'blogs/base.html' %}
+{% block page_header %}
+       <div class="p-3 mb-4 bg-light border rounded-3">
+           <div class="container-fluid py-4">
+               <h1 class="display-3">Read the blogs.</h1>
+               <p class="lead">博客是网站的一种形式，它的内容是以时间轴的形式倒序展示的（即最新的内容出现在第一个位置）。
+                博客通常是由个人或者一小撮人运营的，以对话的形式呈现信息。不过，现在也有很多大公司使用博客来对外发布信息和观点。
+                典型的博客文章还有一个评论区可以让用户对文章发表评论。</p>
+
+               <a class="btn btn-primary btn-lg mt-1"
+                href="{% url 'accounts:register' %}">Register &raquo;</a>
+           </div>
+       </div>
+{% endblock page_header %}
+{% block content %}
+    {% if blog_infos %}
+        {% for blog_info in blog_infos %}
+            <h1 style=" text-shadow: 2px 2px #888888;">{{ blog_info.name }}</h1>
+            <p style="text-indent: 2em;">{{ blog_info.description }}</p>
+            {% for post in blog_info.post_set.all %}
+                <div class="card mb-3">
+                    <h3>{{ post.title }}</h3>
+                    <h5 class="card-header">
+                        {{ post.published_at|date:'M d, Y H:i'}}
+                        {% if user.is_authenticated and blog_info.owner == user %}
+                            <small><a href="{% url 'blogs:edit_post' post.id %}">编辑博文</a></small>
+                        {% endif %}
+                    </h5>
+                    <div class="card-body">{{ post.content|linebreaks }}</div>
+                </div>
+            {% endfor %}
+            {% if user.is_authenticated and blog_info.owner == user %}
+                <h5 class="card-header">
+                    <a href="{% url 'blogs:new_post' blog_info.id %}">新建博文</a>
+                </h5>
+            {% endif %}
+            <hr />
+        {% endfor %}
+    {% else %}
+        <p>There isn't any blog</p>
+    {% endif %}
+{% endblock content %}

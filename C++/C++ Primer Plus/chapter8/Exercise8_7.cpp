@@ -2,13 +2,13 @@
 
 template<typename T>
 double SumArray(T arr[], int n);
-// 返回类型必须相同，选择模板的依据大多数和const参数有关,没有const参数将无法匹配合适的模板函数
+
 struct debts {
     char name[50];
     double amount;
 };
 
-template<> double SumArray(const debts d[], int n);
+template<> double SumArray<const debts>(const debts d[], int n);
 
 int main()
 {
@@ -36,7 +36,7 @@ double SumArray(T arr[], int n)
     return sum;
 }
 
-template <> double SumArray(const debts d[], int n)
+template <> double SumArray<const debts>(const debts d[], int n)
 {
     double sum = 0;
     for (int i = 0; i < n; ++i)

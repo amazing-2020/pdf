@@ -1,3 +1,4 @@
+//compile with Exercise9_4.cpp
 #include <iostream>
 #include "sales.h"
 

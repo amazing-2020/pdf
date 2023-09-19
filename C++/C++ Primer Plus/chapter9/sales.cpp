@@ -75,8 +75,7 @@ namespace SALES
         using std::endl;
         cout << "In this sale, here is the condition:\n";
         for (int i = 0; i < QUARTERS; ++i) {
-            if (s.sales[i] != 0)
-                cout << "Sale " << i+1 << " : " << s.sales[i] << "\t";
+            cout << "Sale " << i+1 << " : " << s.sales[i] << "\t";
         }
         cout << "\nThe max sale is " << s.max << endl;
         cout << "The min sale is " << s.min << endl;

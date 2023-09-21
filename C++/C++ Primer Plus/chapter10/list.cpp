@@ -55,7 +55,7 @@ void List::visit(void (*pf)(Item &))
     }
 }
 
-inline void List::addItem(Item &item)
+void List::addItem(Item &item)
 {
     if (head == NULL)
     {

@@ -16,10 +16,10 @@ public:
     Stonewt(int stn, double lbs, Mode m = STONE);
     Stonewt();
     ~Stonewt();
-    friend Stonewt operator+(const Stonewt & s1, const Stonewt & s2);
-    friend Stonewt operator-(const Stonewt & s1, const Stonewt & s2);
-    friend Stonewt operator*(double n, const Stonewt & s);
-    friend Stonewt operator*(const Stonewt & s, double n) {return n * s;}
+    Stonewt operator+(const Stonewt & s1) const;
+    Stonewt operator-(const Stonewt & s1) const;
+    Stonewt operator*(double n) const;
+    friend Stonewt operator*(double n,const Stonewt & s) {return s * n;}
     friend std::ostream & operator<<(std::ostream & os, const Stonewt & s);
 };
 #endif

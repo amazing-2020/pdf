@@ -28,21 +28,21 @@ Stonewt::~Stonewt()
 {
 }
 
-Stonewt operator+(const Stonewt & s1, const Stonewt & s2)
+Stonewt Stonewt::operator+(const Stonewt &s1) const
 {
-    Stonewt result(s1.pounds + s2.pounds);
+    Stonewt result(s1.pounds + pounds);
     return result;
 }
 
-Stonewt operator-(const Stonewt & s1, const Stonewt & s2)
+Stonewt Stonewt::operator-(const Stonewt &s1) const
 {
-    Stonewt result(s1.pounds - s2.pounds);
+    Stonewt result(pounds - s1.pounds);
     return result;
 }
 
-Stonewt operator*(double n, const Stonewt & s)
+Stonewt Stonewt::operator*(double n) const
 {
-    Stonewt result(n * s.pounds);
+    Stonewt result(n * pounds);
     return result;
 }
 

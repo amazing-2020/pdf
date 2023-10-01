@@ -5,7 +5,7 @@
 complex::complex(double r, double i)
 {
     real = r;
-    i = imagine;
+    imagine = i;
 }
 
 complex::~complex()
@@ -23,8 +23,8 @@ complex complex::operator+(const complex &s) const
 complex complex::operator-(const complex &s) const
 {
     complex sub;
-    sub.real = real + s.real;
-    sub.imagine = imagine + s.imagine;
+    sub.real = real - s.real;
+    sub.imagine = imagine - s.imagine;
     return sub;
 }
 
@@ -32,7 +32,7 @@ complex complex::operator*(const complex &s) const
 {
     complex mut;
     mut.real = real * s.real - imagine * s.imagine;
-    mut.imagine = real * s.imagine + imagine * s.imagine;
+    mut.imagine = real * s.imagine + imagine * s.real;
     return mut;
 }
 

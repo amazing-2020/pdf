@@ -1,4 +1,5 @@
 // compile with example11.15.cpp
+// example11.14.cpp
 #include <cmath>
 #include "vect.h"
 using std::sqrt;

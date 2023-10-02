@@ -1,3 +1,4 @@
+// compile with stock20.cpp
 #include <iostream>
 #include "stock20.h"
 

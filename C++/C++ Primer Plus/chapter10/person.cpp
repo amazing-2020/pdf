@@ -1,3 +1,4 @@
+//compile with Exercise10_2.cpp
 #include <iostream>
 #include <cstring>
 #include "person.h"

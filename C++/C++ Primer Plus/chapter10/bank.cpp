@@ -1,3 +1,4 @@
+// compile with Exercise10_1.cpp
 #include <iostream>
 #include "bank.h"
 Bank::Bank()

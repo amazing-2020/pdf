@@ -1,3 +1,4 @@
+//compile with the golf.cpp
 #include <iostream>
 #include "golf.h"
 const int size = 10;

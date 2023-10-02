@@ -1,5 +1,5 @@
-#ifndef STACK_H_
-#define STACK_H_
+#ifndef STACK05_H_
+#define STACK05_H_
 
 typedef struct customer {
     char fullname[35];

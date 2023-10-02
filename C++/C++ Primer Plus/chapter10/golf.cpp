@@ -1,3 +1,4 @@
+// compile with the Exercise10_3.cpp
 #include <iostream>
 #include <cstring>
 #include "golf.h"

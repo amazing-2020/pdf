@@ -1,3 +1,4 @@
+// compile with stock00.cpp
 #include <iostream>
 #include "stock00.h"
 

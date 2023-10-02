@@ -1,3 +1,4 @@
+// compile with person.cpp
 #include <iostream>
 #include "person.h"
 int main()

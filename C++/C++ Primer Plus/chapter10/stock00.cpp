@@ -1,3 +1,4 @@
+// example10.2.cpp
 #include <iostream>
 #include "stock00.h"
 

@@ -1,3 +1,4 @@
+// compile with sales.cpp
 #include "sales.h"
 int main()
 {

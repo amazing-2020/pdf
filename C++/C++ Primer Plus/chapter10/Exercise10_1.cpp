@@ -1,3 +1,4 @@
+//compile with bank.cpp
 #include <iostream>
 #include "bank.h"
 

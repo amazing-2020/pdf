@@ -1,4 +1,5 @@
 // compile with example10.6.cpp
+// example10.5
 #include <iostream>
 #include "stock10.h"
 

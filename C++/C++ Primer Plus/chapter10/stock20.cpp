@@ -1,4 +1,5 @@
-//compile with example10.9.cpp
+// compile with example10.9.cpp
+// example10.8
 #include <iostream>
 #include "stock20.h"
 

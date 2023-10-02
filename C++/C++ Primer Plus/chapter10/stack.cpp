@@ -1,4 +1,5 @@
 // compile with example10.12.cpp
+// example10.11
 #include "stack.h"
 Stack::Stack()
 {

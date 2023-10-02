@@ -1,4 +1,5 @@
 // example10.2.cpp
+// compile example10.3.cpp
 #include <iostream>
 #include "stock00.h"
 

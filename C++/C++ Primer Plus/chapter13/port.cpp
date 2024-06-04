@@ -100,4 +100,5 @@ ostream & operator<<(ostream & os, const VintagePort & p)
 {
     os << (const Port &) p;
     os << ", " << p.nickname << ", " << p.year;
+    return os;
 }

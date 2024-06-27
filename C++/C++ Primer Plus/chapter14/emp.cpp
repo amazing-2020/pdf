@@ -1,5 +1,6 @@
 #include "emp.h"
 #include <iostream>
+#include <ostream>
 #include <string>
 using std::cin;
 using std::getline;
@@ -34,7 +35,7 @@ void abstr_emp::SetAll()
 
 std::ostream &operator<<(std::ostream & os, const abstr_emp & e)
 {
-    os << e.fname << " " << e.lname << ", job is: " << e.job << endl;
+    os << e.fname << " " << e.lname << ", job is: " << e.job;
     return os;
 }
 
@@ -47,8 +48,9 @@ employee::employee(const std::string & fn, const std::string & ln, const std::st
 
 void employee::ShowAll() const
 {
-    cout << "\nThis is an employee:\n";
+    cout << "This is an employee:\n";
     abstr_emp::ShowAll();
+    cout << endl;
 }
 
 void employee::SetAll()
@@ -71,13 +73,17 @@ manager::manager(const manager & m)
 
 void manager::ShowAll() const
 {
-    cout << "\nHere is a manager: \n";
+    cout << "Here is a manager: \n";
     abstr_emp::ShowAll();
-    cout << "The manager manage " << inchargeof << " employee." << endl;
+    cout << "The manager manage " << inchargeof << " employees.\n";
+    cout << endl;
 }
 
 void manager::SetAll()
 {
+    while (cin.get() != '\n') {
+        continue;
+    }
     abstr_emp::SetAll();
     cout << "Enter the amount that this manager \nis managing: ";
     cin >> inchargeof;
@@ -100,14 +106,18 @@ fink::fink(const fink & e)
 
 void fink::ShowAll() const
 {
-    cout << "\nThis is a fink:\n";
+    cout << "This is a fink:\n";
     abstr_emp::ShowAll();
-    cout << "To whom fink reports: " << reportsto << endl;
+    cout << "To whom fink reports: " << reportsto << "\n";
+    cout << endl;
 }
 
 void fink::SetAll()
 {
     cout << "Enter the fink's data:\n";
+    while (cin.get() != '\n') {
+        continue;
+    }
     abstr_emp::SetAll();
     cout << "Enter the name of the pereson the fink report to ";
     getline(cin, reportsto);
@@ -132,15 +142,18 @@ highfink::highfink(const highfink & h)
 
 void highfink::ShowAll() const
 {
-    cout << "\nThis is a highfink: \n";
+    cout << "This is a highfink: \n";
     abstr_emp::ShowAll();
     cout << "This manager reports to " << fink::ReportsTo() <<
-            " and manage " << manager::InChargeOf() << " employee." << endl;
+            " and manage " << manager::InChargeOf() << " employees.\n" << endl;
 }
 
 void highfink::SetAll()
 {
     cout << "Enter the highfink's data:\n";
+    while (cin.get() != '\n') {
+        continue;
+    }
     abstr_emp::SetAll();
     cout << "Enter the amount that this manager \nis managing: ";
     cin >> manager::InChargeOf();
